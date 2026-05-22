@@ -9,7 +9,7 @@ export class AuthService {
   }
   login() {
     return {
-        message: 'User Login Successfully'
-    }
+      message: 'User Login Successfully',
+    };
   }
 }
