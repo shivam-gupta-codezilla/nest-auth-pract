@@ -9,7 +9,7 @@ export class usersService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
-  ) { }
+  ) {}
 
   async getUsers() {
     return this.userRepository.find();
@@ -31,8 +31,8 @@ export class usersService {
   async findByEmail(email: string) {
     return this.userRepository.findOne({
       where: {
-        email
-      }
-    })
+        email,
+      },
+    });
   }
 }

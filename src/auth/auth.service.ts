@@ -69,11 +69,11 @@ export class AuthService {
     };
   }
 
-  async refresh(refreshToken: string) {
+  refresh(refreshToken: string) {
     try {
       const payload = this.jwtService.verify(refreshToken, {
         secret: this.configService.getOrThrow('JWT_REFRESH_SECRET'),
-      });
+      }) as { sub: number; email: string };
 
       const accessToken = this.jwtService.sign(
         {
